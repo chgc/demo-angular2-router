@@ -41,6 +41,7 @@ const barrels: string[] = [
   'app/product/product-list',
   'app/product/product-detail',
   'app/product/product-detail-edit',
+  'app/profile/shared/auth',
   /** @cli-barrel */
 ];
 
