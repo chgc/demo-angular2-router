@@ -1,0 +1,19 @@
+.main {
+    width: 90%;
+    height: 100%;
+    margin: 0 auto;
+    border: 1px green solid;
+}
+
+.menu {
+    width: 240px;
+    height: 600px;
+    border: 1px red solid;
+    float: left;
+}
+
+.content {
+    width: 100%;
+    border: 1px blue solid;
+    height: 600px;
+}
