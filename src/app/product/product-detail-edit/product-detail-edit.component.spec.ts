@@ -2,6 +2,7 @@
 
 import { By }           from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 import {
   beforeEach, beforeEachProviders,
@@ -12,9 +13,9 @@ import {
 
 import { ProductDetailEditComponent } from './product-detail-edit.component';
 
-describe('Component: ProductDetailEdit', () => {
+describe('Component: ProductDetailEdit', (route: ActivatedRoute, router: Router) => {
   it('should create an instance', () => {
-    let component = new ProductDetailEditComponent();
+    let component = new ProductDetailEditComponent(route, router);
     expect(component).toBeTruthy();
   });
 });

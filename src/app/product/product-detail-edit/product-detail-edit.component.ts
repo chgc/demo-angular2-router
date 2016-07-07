@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy} from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   moduleId: module.id,
@@ -6,11 +7,21 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: 'product-detail-edit.component.html',
   styleUrls: ['product-detail-edit.component.css']
 })
-export class ProductDetailEditComponent implements OnInit {
+export class ProductDetailEditComponent implements OnInit, OnDestroy {
 
-  constructor() {}
+  sub: any;
+  id: any;
+
+  constructor(private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
+    this.sub = this.router.routerState.parent(this.route).params.subscribe(params => {
+      this.id = params["id"];
+    })
+  }
+
+  ngOnDestroy() {
+    this.sub.unsubscribe();
   }
 
 }
