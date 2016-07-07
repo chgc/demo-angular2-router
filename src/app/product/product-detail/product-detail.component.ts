@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   moduleId: module.id,
@@ -11,10 +11,15 @@ export class ProductDetailComponent implements OnInit {
 
   id: any;
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
-    this.route.params.subscribe(params => {
+    // // access itself params
+    // this.route.params.subscribe(params=>{
+    //   this.id = params["id"];
+    // })
+    // access parent params
+    this.router.routerState.parent(this.route).params.subscribe(params => {
       this.id = params["id"];
       console.log(this.id);
     })

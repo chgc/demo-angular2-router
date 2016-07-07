@@ -2,7 +2,7 @@
 
 import { By }           from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 import {
   beforeEach, beforeEachProviders,
@@ -13,9 +13,9 @@ import {
 
 import { ProductDetailComponent } from './product-detail.component';
 
-describe('Component: ProductDetail', (router: ActivatedRoute) => {
+describe('Component: ProductDetail', (route: ActivatedRoute, router: Router) => {
   it('should create an instance', () => {
-    let component = new ProductDetailComponent(router);
+    let component = new ProductDetailComponent(route, router);
     expect(component).toBeTruthy();
   });
 });
