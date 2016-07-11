@@ -6,13 +6,13 @@ import {
   expect, it, xit,
   async, inject
 } from '@angular/core/testing';
-import { AuthService } from './auth.service';
+import { AuthGuard } from './auth.service';
 
 describe('Auth Service', () => {
-  beforeEachProviders(() => [AuthService]);
+  beforeEachProviders(() => [AuthGuard]);
 
   it('should ...',
-      inject([AuthService], (service: AuthService) => {
-    expect(service).toBeTruthy();
-  }));
+    inject([AuthGuard], (service: AuthGuard) => {
+      expect(service).toBeTruthy();
+    }));
 });
